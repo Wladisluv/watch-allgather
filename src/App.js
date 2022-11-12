@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Modal from "./components/Modal";
 
 import './scss/app.scss'
 
 
 function App() {
+  const [modalActive, setModalActive] = useState(false);
+
   return (
-    <div className="app">
+    <div className="wrapper">
       <Header />
         <div className="content">
             <div className="content-left">
@@ -23,13 +26,14 @@ function App() {
                 </p>
               </div>
               <div>
-                <button className="content__btn">Войти</button>
+                <button className="content__btn" onClick={() => setModalActive(true)}>Войти</button>
               </div>
             </div>
-              <div className="content__img">
+            <div className="content__round"></div>
+              <div className="content__img"></div>
             </div>
-            </div>
-        <Footer />
+      <Footer />
+      <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
 }

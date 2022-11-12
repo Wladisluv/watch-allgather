@@ -20,9 +20,13 @@
   }
 
   &__sign-in {
+    color: white;
+    background: none;
+    border: none;
     font-size: 22px;
 
     &:hover {
+      cursor: pointer;
       filter: brightness(85%);
     }
   }

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
-function Header() {
+const Header = () => {
+  const [modalActive, setModalActive] = useState(false);
+ 
   return (
     <div className='header'>
       <div className='container'>
@@ -8,9 +11,10 @@ function Header() {
               <h1>Watch Allgather</h1>
           </div>
           <div>
-            <a className='header__sign-in' href='/'>Войти</a>
+            <button className='header__sign-in' onClick={() => setModalActive(true)}>Войти</button>
           </div>
       </div>
+      <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
 };
