@@ -1,0 +1,29 @@
+@import '../variables';
+
+.header {
+  width: 100%;
+  padding: 25px 0;
+  background-color: $header-footer-bgc;
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+  }
+
+  &__logo {
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  &__sign-in {
+    font-size: 22px;
+
+    &:hover {
+      filter: brightness(85%);
+    }
+  }
+}
