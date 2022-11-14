@@ -1,0 +1,24 @@
+@import '../variables';
+
+.auth {
+  position: relative;
+  height: 100vh;
+  background-color: $bgc;
+
+  &__title {
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 48px;
+
+    &:hover {
+      filter: brightness(60%);
+      transition: 0.3s;
+    }
+  }
+}

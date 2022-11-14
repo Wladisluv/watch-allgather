@@ -1,40 +1,22 @@
-import React, { useState } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Modal from "./components/Modal";
+import React from "react";
+import { Routes, Route } from 'react-router-dom';
+
+import WelcomePage from "./pages/WelcomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import MainPage from "./pages/MainPage";
 
 import './scss/app.scss'
 
 
 function App() {
-  const [modalActive, setModalActive] = useState(false);
-
   return (
-    <div className="wrapper">
-      <Header />
-        <div className="content">
-            <div className="content-left">
-            <div className="content__descr">
-              <p>
-                Watch Allgather - проект который позволяет отслеживать новинки кино и сериалов, 
-                а также добавлять их в список отслеживаемых, просмотренных или уже завершенных.
-                </p>
-                <br />
-                <p>
-                Изюминкой проекта является возможность создавать свою 
-                комнату для совместного просмотра с друзьями!
-                </p>
-              </div>
-              <div>
-                <button className="content__btn" onClick={() => setModalActive(true)}>Войти</button>
-              </div>
-            </div>
-            <div className="content__round"></div>
-              <div className="content__img"></div>
-            </div>
-      <Footer />
-      <Modal active={modalActive} setActive={setModalActive} />
-    </div>
+    <Routes>
+      <Route path='/' element={<WelcomePage  />} />
+      <Route path='/login' element={<LoginPage  />} />
+      <Route path='/register' element={<RegisterPage  />} />
+      <Route path='/main' element={<MainPage  />} />
+    </Routes>
   );
 }
 

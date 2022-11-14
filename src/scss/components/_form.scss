@@ -1,0 +1,93 @@
+@import '../variables';
+
+.form {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inputs {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      font-size: 48px;
+    }
+  
+    &-inner {
+    padding-top: 20px;
+  
+    p {
+      padding-bottom: 5px;
+    }
+    }
+  
+    &__item {
+      padding: 1rem;
+      font-size: 18px;
+      width: 300px;
+      height: 60px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(105, 105, 105);
+
+      &::-webkit-input-placeholder {
+        
+        color: rgb(196, 196, 196);
+      }
+  
+      &:focus {
+        background-color: rgba(179, 241, 253, 0.688);
+        transition: 0.2s;
+  
+        &::-webkit-input-placeholder {
+          color: transparent;
+          opacity: 1; 
+          transition: opacity 0.3s ease;
+        }
+      }
+    }
+  }
+  
+  .sign-button {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+  
+    &__item {
+      width: 300px;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      background-color: $components-color;
+      font-size: 22px;
+      color: white;
+  
+      &:hover {
+        cursor: pointer;
+        filter: brightness(75%);
+        transition: 0.3s;
+      }
+    }
+  }
+  
+  .without-acc {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    width: 300px;
+    
+    button {
+      cursor: pointer;
+      color: white;
+      background: none;
+      border: none;
+  
+      &:hover {
+        color: $components-color;
+      }
+    }
+  }
+}

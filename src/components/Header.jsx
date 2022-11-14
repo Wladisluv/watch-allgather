@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [modalActive, setModalActive] = useState(false);
- 
   return (
-    <div className='header'>
-      <div className='container'>
-          <div className='header__logo'>
-              <h1>Watch Allgather</h1>
-          </div>
-          <div>
-            <button className='header__sign-in' onClick={() => setModalActive(true)}>Войти</button>
-          </div>
+    <div className="header">
+      <div className="container">
+        <div className="header__logo">
+          <h1>Watch Allgather</h1>
+        </div>
+        <div>
+          <Link to="/login">
+            <button className="header__sign-in">Войти</button>
+          </Link>
+        </div>
       </div>
-      <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
 };
