@@ -1,0 +1,128 @@
+@import '../variables';
+
+
+.wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.user {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__arrow {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+
+    &-rotate {
+      margin-left: 5px;
+      width: 20px;
+      height: 20px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.select {
+    background: #202020;
+    border-radius: 5px;
+    box-shadow: 0 12px 50px 0 rgb(0 0 0 / 25%);
+    color: #888;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    right: 80px;
+    text-align: left;
+    top: 85px;
+
+    &__triangle {
+    background-color: #202020;
+    height: 20px;
+    position: absolute;
+    right: 40px;
+    top: -3px;
+    transform: rotate(45deg);
+    width: 20px;
+    z-index: 5;
+    }
+
+    &-navigation {
+      width: 250px;
+      height: 170px;
+      color: #888;
+
+      &-header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(65, 65, 65, 0.392);
+        padding: 20px;
+
+        p {
+          font-size: 18px;
+        }
+
+        &__logout {
+          
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      &-list {
+        padding-top: 5px;
+        list-style: none;
+
+        &__item-wrapper {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        &__link {
+          color: #888;
+          text-decoration: none;
+          width: 100%;
+
+          &:hover {
+            background-color: #2B2B2B;
+            transition: 0.2s ease;
+
+            li {
+              color: #ffff;
+              transition: 0.2s ease;
+            }
+          }
+        }
+
+        &__item-container {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          width: fit-content;
+          }
+
+          li {
+            color: #8f8f8f;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 13px 0 13px 19px;
+          }
+        }
+      }
+    }
