@@ -22,14 +22,11 @@
   }
 
   &__arrow {
-    margin-left: 5px;
-    width: 20px;
-    height: 20px;
+      @include arrow;
 
     &-rotate {
-      margin-left: 5px;
-      width: 20px;
-      height: 20px;
+      @include arrow;
+      margin-top: 0;
       transform: rotate(180deg);
     }
   }

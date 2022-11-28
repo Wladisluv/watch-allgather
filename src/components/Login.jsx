@@ -1,4 +1,4 @@
-import React from 'react';
+import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Form from './Form';
@@ -14,7 +14,6 @@ const Login = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -22,6 +21,7 @@ const Login = () => {
             token: user.accessToken,
           }),
         );
+        localStorage.setItem('email', email);
         history('/main');
       })
       .catch(() => alert('Неверный логин или пароль'));
