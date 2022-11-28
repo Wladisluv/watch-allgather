@@ -28,7 +28,6 @@ const MainPage = () => {
     }
   }, [isAuth, navigate]);
 
-  const linkkk = 'top?type=TOP_100_POPULAR_FILMS&page=1';
   return (
     <div className="main">
       <Header
@@ -59,21 +58,33 @@ const MainPage = () => {
         />
       </div>
 
-      {/* <div className="section mb-3">
-        <div className="section__header mb-2">
-          <h2>Популярные сериалы</h2>
-        </div>
-        <MovieList category={category.tv} type={tvType.popular} />
-      </div>
-
       <div className="section mb-3">
         <div className="section__header mb-2">
           <h2>Лучшие сериалы</h2>
         </div>
-        <MovieList category={category.tv} type={tvType.top_rated} />
+        <MovieList
+          category={category.tv}
+          type={
+            tvType[
+              'films?order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1'
+            ]
+          }
+        />
       </div>
 
       <div className="section mb-3">
+        <div className="section__header mb-2">
+          <h2>Лучшее аниме</h2>
+        </div>
+        <MovieList
+          category={category.tv}
+          type={
+            'films?genres=24&order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1'
+          }
+        />
+      </div>
+
+      {/* <div className="section mb-3">
         <div className="section__header mb-2">
           <h2>Популярное аниме</h2>
         </div>
