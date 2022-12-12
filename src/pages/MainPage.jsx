@@ -39,49 +39,52 @@ const MainPage = () => {
         }
       />
       <Filters categories="Все страны" genres="Все жанры" year="Все годы" />
-      <div className="container">
-        <div className="section mb-3">
-          <div className="section__header mb-2">
-            <h2>Лучшие фильмы</h2>
+
+      <div className="films">
+        <div className="container">
+          <div className="films__item">
+            <div className="films__item-header">
+              <h2>Лучшие фильмы</h2>
+            </div>
+            <MovieList category={category.films} type={movieType.top} />
           </div>
-          <MovieList category={category.films} type={movieType.top} />
-        </div>
-      </div>
 
-      <div className="section mb-3">
-        <div className="section__header mb-2">
-          <h2>Популярные фильмы</h2>
-        </div>
-        <MovieList
-          category={category.films}
-          type={movieType['top?type=TOP_100_POPULAR_FILMS&page=1']}
-        />
-      </div>
+          <div className="films__item">
+            <div className="films__item-header">
+              <h2>Популярные фильмы</h2>
+            </div>
+            <MovieList
+              category={category.films}
+              type={movieType['top?type=TOP_100_POPULAR_FILMS&page=1']}
+            />
+          </div>
 
-      <div className="section mb-3">
-        <div className="section__header mb-2">
-          <h2>Лучшие сериалы</h2>
-        </div>
-        <MovieList
-          category={category.tv}
-          type={
-            tvType[
-              'films?order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1'
-            ]
-          }
-        />
-      </div>
+          <div className="films__item">
+            <div className="films__item-header">
+              <h2>Лучшие сериалы</h2>
+            </div>
+            <MovieList
+              category={category.tv}
+              type={
+                tvType[
+                  'films?order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&'
+                ]
+              }
+            />
+          </div>
 
-      <div className="section mb-3">
-        <div className="section__header mb-2">
-          <h2>Лучшее аниме</h2>
+          <div className="films__item">
+            <div className="films__item-header">
+              <h2>Лучшее аниме</h2>
+            </div>
+            <MovieList
+              category={category.tv}
+              type={
+                'films?genres=24&order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&'
+              }
+            />
+          </div>
         </div>
-        <MovieList
-          category={category.tv}
-          type={
-            'films?genres=24&order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1'
-          }
-        />
       </div>
 
       {/* <div className="section mb-3">

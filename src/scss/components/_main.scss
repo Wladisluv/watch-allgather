@@ -3,3 +3,12 @@
 .main {
   background-color: $bgc;
 }
+
+.films__item {
+  margin-top: 30px;
+  height: 420px;
+
+  &-header {
+    padding-bottom: 15px;
+  }
+}
