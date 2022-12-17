@@ -8,7 +8,7 @@ import { setUser } from '../store/slices/userSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = (email, password) => {
     const auth = getAuth();
@@ -22,7 +22,7 @@ const Login = () => {
           }),
         );
         localStorage.setItem('email', email);
-        history('/main');
+        navigate('/main');
       })
       .catch(() => alert('Неверный логин или пароль'));
   };

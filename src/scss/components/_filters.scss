@@ -2,6 +2,7 @@
 
 .category-select {
   @include select;
+  z-index: 3;
 
   &-navigation {
     width: 250px;
@@ -51,10 +52,12 @@
 
 .genres-select {
   @include select;
+  z-index: 3;
   left: 290px;
 }
 
 .years-select {
   @include select;
+  z-index: 3;
   left: 500px;
 }

@@ -1,0 +1,33 @@
+@mixin arrow {
+  margin-top: 6px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(/assets/img/arrow.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@mixin category {
+  display: flex;
+  justify-content: space-around;
+  width: calc(10% + 80px);
+  line-height: 32px;
+  margin-right: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@mixin select {
+  background: #fefefe;
+  border-radius: 5px;
+  box-shadow: 0 12px 50px 0 rgb(0 0 0 / 25%);
+  font-size: 13px;
+  font-weight: 500;
+  position: absolute;
+  left: 80px;
+  text-align: left;
+  top: 140px;
+  padding-bottom: 5px;
+}

@@ -1,0 +1,112 @@
+@import '../variables';
+
+.detail {
+  margin-top: 30px;
+  &__top {
+    display: flex;
+    height: 480px;
+    &__film-poster {
+      width: 300px;
+      height: 300px;
+      &__img {
+        padding-top: 160%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+      }
+  }
+  }
+}
+
+.detail__top__film-about {
+  max-height: 480px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-left: 50px;
+  .detail__top__film-title {
+    max-width: 700px;
+      &__title {
+        font-size: 50px;
+        font-weight: 700;
+    }
+  }
+
+  .detail__top__film-descr {
+    margin-top: 30px;
+    width: 800px;
+    &__descr {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+}
+
+.detail__film-about {
+  max-width: 300px;
+  max-height: 500px;
+
+  &__rating {
+    color: red;
+  }
+
+  p {
+    line-height: 30px;
+    font-size: 22px;
+  }
+}
+
+.movie-content {
+
+    &__poster {
+        flex: 1;
+
+        &__img {
+
+        }
+    }
+
+    &__info {
+
+        .genres {
+            & > * ~ * {
+                margin-left: 0.5rem;
+            }
+
+            &__item {
+                padding: 0.5rem 1.5rem;
+                border: 2px solid white;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                background-color: #cccc;
+            }
+        }
+    }
+}
+
+.casts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+
+    &__item {
+        &__img {
+            padding-top: 160px;
+            background-size: cover;
+            margin-bottom: 0.5rem;
+        }
+
+        &__name {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.video {
+    margin-bottom: 3rem;
+
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+}

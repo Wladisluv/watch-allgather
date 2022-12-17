@@ -1,0 +1,36 @@
+@import '../variables';
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 3rem;
+
+    &__loadmore {
+        text-align: center;
+    }
+}
+
+
+
+.mcard {
+
+  &::before {
+      content: "";
+      position: relative;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgb(152, 152, 152);
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+  }
+}
+
+.movie-search {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}

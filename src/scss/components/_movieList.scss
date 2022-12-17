@@ -1,0 +1,68 @@
+@import '../variables';
+
+.movie-list {
+  padding-top: 15px;
+  height: 100%;
+  .swiper-slide {
+      width: 15%;
+  }
+}
+
+.swiper-button-disabled {
+  display: none;
+}
+
+.swiper-container {
+  overflow: visible;
+}
+
+.swiper {
+  position: relative;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  background-color: rgba(80,80,80,.8);
+  height: 54px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background-color .3s,opacity .3s;
+  width: 54px;
+  z-index: 1;
+  left: 0px;
+  top: 45%;
+
+  &:after {
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+  }
+}
+
+.swiper-button-next {
+  background-color: rgba(80,80,80,.8);
+  height: 54px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  transition: background-color .3s,opacity .3s;
+  width: 54px;
+  z-index: 1;
+  right: 0px;
+  top: 45%;
+
+  &:after {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+.movie-container {
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+}

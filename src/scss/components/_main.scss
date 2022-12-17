@@ -8,7 +8,31 @@
   margin-top: 30px;
   height: 420px;
 
+  &__catalog-link {
+    display: block;
+    width: fit-content;
+  }
+
   &-header {
-    padding-bottom: 15px;
+    @include category;
+    padding: 5px 0px;
+    width: fit-content;
+    display:  flex;
+    align-items: center;
+
+    &:hover {
+      background-color: rgba(119, 119, 119, 0.392);
+    }
+
+    &__title {
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    &__arrow {
+      @include arrow;
+      rotate: -90deg;
+    }
   }
 }

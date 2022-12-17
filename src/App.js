@@ -20,10 +20,12 @@ function App() {
       <Route path='/login' element={<LoginPage  />} />
       <Route path='/register' element={<RegisterPage  />} />
       <Route path='/main' element={<MainPage  />} />
-      <Route path='/:category/search/:keyword' element={<Catalog />}/>
       <Route path='/:category/:filmId' element={<Detail />} />
       <Route path='/:category/:kinopoiskId' element={<Detail />} />
-      <Route path="/:category" element={<Catalog />} />
+      <Route path="/catalog/:category/top250" element={<Catalog />} />
+      <Route path="/catalog/:category/popular-films" element={<Catalog />} />
+      <Route path="/catalog/:category/top-series" element={<Catalog />} />
+      <Route path="/catalog/:category/top-anime" element={<Catalog />} />
     </Routes>
   );
 }
