@@ -1,0 +1,55 @@
+@import '../variables';
+
+.favorites {
+  width: 100%;
+  background-color: rgba(60, 60, 60, 0.392);
+
+
+  &-name {
+    padding-top: 1rem;
+    p {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &-categories {
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    &__item {
+      padding-bottom: 10px;
+      position: relative;
+      font-size: 22px;
+      font-weight: 700;
+
+      p {
+        color: #888;
+
+        &:hover {
+          color: #ededed;
+        }
+      }
+
+      &:hover {
+        transition: 0.2s ease;
+        cursor: pointer;
+      }
+
+      &__underline {
+        &:before {
+          background: $components-color;
+          bottom: 0;
+          content: "";
+          height: 3px;
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

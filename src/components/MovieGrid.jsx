@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import MovieCard from '../components/MovieCard';
 import Search from '../components/Search';
@@ -14,6 +15,20 @@ const MovieGrid = (props) => {
 
   const { keyword } = useParams();
 
+  let listTitle;
+  const setTitle = () => {
+    if (props.category === category.films) {
+      listTitle = 'Лучшие фильмы';
+    } else if (props.category === category.popularFilms) {
+      listTitle = 'Популярные фильмы';
+    } else if (props.category === category.tv) {
+      listTitle = 'Лучшие сериалы';
+    } else if (props.category === category.anime) {
+      listTitle = 'Лучшее аниме';
+    }
+  };
+  setTitle();
+
   useEffect(() => {
     const getList = async () => {
       let response = null;
@@ -27,6 +42,7 @@ const MovieGrid = (props) => {
               { params },
               (pageNumber = 1),
             );
+            listTitle = 'asd';
             break;
 
           case category.popularFilms:
@@ -46,7 +62,7 @@ const MovieGrid = (props) => {
             console.log(response);
             break;
 
-          case category.topAnime:
+          case category.anime:
             response = await kinopoiskApi.getTvList(
               'films?genres=24&order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&',
               { params },
@@ -109,7 +125,7 @@ const MovieGrid = (props) => {
           setItems([...items, ...response.items]);
           break;
 
-        case category.topAnime:
+        case category.anime:
           response = await kinopoiskApi.getTvList(
             'films?genres=24&order=NUM_VOTE&type=TV_SERIES&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&',
             { params },
@@ -140,18 +156,21 @@ const MovieGrid = (props) => {
 
   return (
     <>
-      <div className="section mb-3">
-        <Search />
-      </div>
       <div className="movie-grid">
-        {items.map((item, i) => (
-          <MovieCard className="mcard" category={props.category} item={item} key={i} />
-        ))}
+        <p className="movie-grid__link">
+          <Link to="/main">Главная</Link> ➜ {listTitle}
+        </p>
+        <h2 className="movie-grid__list-title">{listTitle}</h2>
+        <div className="movie-grid__list">
+          {items.map((item, i) => (
+            <MovieCard className="mcard" category={props.category} item={item} key={i} />
+          ))}
+        </div>
       </div>
       {page < totalPage ? (
         <div className="movie-grid__loadmore">
-          <button className="small" onClick={loadMore}>
-            Load more
+          <button className="movie-grid__loadmore__button" onClick={loadMore}>
+            Загрузить еще
           </button>
         </div>
       ) : null}

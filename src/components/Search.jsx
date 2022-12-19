@@ -27,10 +27,11 @@ const Search = (props) => {
   }, [props.category, keyword]);
 
   return (
-    <div className="search">
+    <div className="search search_disabled">
       <input
-        className="search__input"
+        className="search__input search__input_disabled"
         type="text"
+        disabled
         placeholder="Найти"
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}

@@ -1,17 +1,50 @@
 @import '../variables';
 
 .movie-grid {
+  margin-top: 15px;
+
+  &__link {
+    margin-bottom: 15px;
+    color: #888;
+  }
+
+  Link {
+    color: #888;
+  }
+
+  &__list {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     margin-bottom: 3rem;
 
+  &-title {
+    font-size: 38px;
+  }
+  }
+
     &__loadmore {
         text-align: center;
+
+        &__button {
+        margin-bottom: 2rem;
+        width: 200px;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        background-color: $components-color;
+        font-size: 22px;
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+          filter: brightness(75%);
+          transition: 0.3s;
+        }
+        }
     }
 }
-
-
 
 .mcard {
 

@@ -1,9 +1,28 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { removeUser } from '../store/slices/userSlice';
+
+import { useAuth } from '../hooks/useAuth';
 
 import userIcon from '../assets/img/user2.png';
 
-const User = ({ email, logout }) => {
+const User = () => {
   const [isOpen, setOpen] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isAuth, email, token, id } = useAuth();
+  localStorage.setItem('email', email);
+  localStorage.setItem('token', token);
+  localStorage.setItem('id', id);
+  // useEffect(() => {
+  //   if (isAuth) {
+  //     navigate('/main');
+  //   } else {
+  //     navigate('/login');
+  //   }
+  // }, [isAuth, navigate]);
 
   const handleOpen = () => {
     setOpen(!isOpen);
@@ -19,23 +38,26 @@ const User = ({ email, logout }) => {
           <div className="select__triangle"></div>
           <div className="select-navigation">
             <div className="select-navigation-header">
-              <p>{email}</p>
+              <p>{`${email}`}</p>
             </div>
             <div>
               <ul className="select-navigation-list">
                 <div className="select-navigation-list__item-wrapper">
-                  <a href="/" className="select-navigation-list__link">
+                  <Link to="/profile/collection" className="select-navigation-list__link">
                     <div className="select-navigation-list__item-container">
                       <li>Моя коллекция</li>
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="select-navigation-list__item-wrapper">
-                  <a href="/login" onClick={logout} className="select-navigation-list__link">
+                  <Link
+                    to="/login"
+                    onClick={() => dispatch(removeUser(navigate('/login')))}
+                    className="select-navigation-list__link">
                     <div className="select-navigation-list__item-container">
                       <li>Выйти</li>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </ul>
             </div>

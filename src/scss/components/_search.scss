@@ -3,6 +3,7 @@
 .search {
   position: relative;
 
+
   &:before {
     content: '';
     position: absolute;
@@ -16,28 +17,39 @@
     background-size: cover;
   }
 
-  &__input {
-      padding-left: 40px;
-      font-size: 18px;
-      width: 300px;
-      height: 40px;
-      border: none;
-      border-radius: 5px;
-      background-color: rgb(105, 105, 105);
-
-      &::-webkit-input-placeholder {
-        color: rgb(196, 196, 196);
-      }
-  
-      &:focus {
-        background-color: rgba(179, 241, 253, 0.688);
-        transition: 0.2s;
-  
-        &::-webkit-input-placeholder {
-          color: transparent;
-          opacity: 1; 
-          transition: opacity 0.3s ease;
-        }
-      }
+  &_disabled {
+    opacity: 50%;
   }
+  
+  &__input {
+    padding-left: 40px;
+    font-size: 18px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(105, 105, 105);
+
+    &_disabled {
+      &:disabled { 
+        background: rgb(124, 124, 124); 
+      }
+    }
+    
+    &::-webkit-input-placeholder {
+      color: rgb(196, 196, 196);
+    }
+    
+    &:focus {
+      background-color: rgba(179, 241, 253, 0.688);
+      transition: 0.2s;
+      
+      &::-webkit-input-placeholder {
+        color: transparent;
+        opacity: 1; 
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+  
 }

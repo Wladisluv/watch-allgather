@@ -42,8 +42,12 @@
   }
 }
 
+.detail__film-bottom {
+  display: flex;
+}
+
 .detail__film-about {
-  max-width: 300px;
+  width: 300px;
   max-height: 500px;
 
   &__rating {
@@ -53,6 +57,35 @@
   p {
     line-height: 30px;
     font-size: 22px;
+  }
+}
+
+.detail-add-to-fav {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 50px;
+  align-content: center;
+
+  &__item {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 22px;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      fill: white;
+      width: 200px;
+      height: 35px;
+      background-color: rgb(42, 42, 42);
+
+      &:hover {
+        cursor: pointer;
+        transition: 0.2s;
+        background-color: $components-color;
+      }
+    }
   }
 }
 
@@ -82,31 +115,5 @@
                 background-color: #cccc;
             }
         }
-    }
-}
-
-.casts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 10px;
-
-    &__item {
-        &__img {
-            padding-top: 160px;
-            background-size: cover;
-            margin-bottom: 0.5rem;
-        }
-
-        &__name {
-            font-size: 0.8rem;
-        }
-    }
-}
-
-.video {
-    margin-bottom: 3rem;
-
-    &__title {
-        margin-bottom: 1.5rem;
     }
 }

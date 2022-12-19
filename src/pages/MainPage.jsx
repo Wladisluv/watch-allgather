@@ -1,7 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { removeUser } from '../store/slices/userSlice';
+import { Link } from 'react-router-dom';
 
 import kinopoiskApi from '../api/kinopoiskApi';
 
@@ -15,23 +13,8 @@ import MovieCard from '../components/MovieCard';
 
 import { category, movieType, tvType } from '../api/kinopoiskApi';
 
-import { useAuth } from '../hooks/useAuth';
-
 const MainPage = (props) => {
   const [items, setItems] = useState([]);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { isAuth, email, token, id } = useAuth();
-  localStorage.setItem('email', email);
-  localStorage.setItem('token', token);
-  localStorage.setItem('id', id);
-  useEffect(() => {
-    if (isAuth) {
-      navigate('/main');
-    } else {
-      navigate('/login');
-    }
-  }, [isAuth, navigate]);
 
   const [keyword, setKeyword] = useState(props.keyword ? props.keyword : '');
 
@@ -64,7 +47,7 @@ const MainPage = (props) => {
                 onChange={(e) => setKeyword(e.target.value)}
               />
             </div>
-            <User email={email} logout={() => dispatch(removeUser(navigate('/login')))} />
+            <User />
           </div>
         }
       />
@@ -86,7 +69,7 @@ const MainPage = (props) => {
             </div>
 
             <div className="films__item">
-              <Link className="films__item__catalog-link" to="/catalog/popularFilms/popular-films">
+              <Link className="films__item__catalog-link" to="/catalog/popularFilms">
                 <div className="films__item-header">
                   <div className="films__item-header__title">
                     <h2>Популярные фильмы</h2>
@@ -98,7 +81,7 @@ const MainPage = (props) => {
             </div>
 
             <div className="films__item">
-              <Link className="films__item__catalog-link" to="/catalog/tv/top-series">
+              <Link className="films__item__catalog-link" to="/catalog/tv/best-series">
                 <div className="films__item-header">
                   <div className="films__item-header__title">
                     <h2>Лучшие сериалы</h2>
@@ -115,7 +98,7 @@ const MainPage = (props) => {
             </div>
 
             <div className="films__item">
-              <Link className="films__item__catalog-link" to="/catalog/topAnime/top-anime">
+              <Link className="films__item__catalog-link" to="/catalog/anime/best-anime">
                 <div className="films__item-header">
                   <div className="films__item-header__title">
                     <h2>Лучшее аниме</h2>
@@ -134,7 +117,7 @@ const MainPage = (props) => {
         </div>
       ) : (
         <div className="container">
-          <div className="movie-grid">
+          <div className="movie-grid__list">
             {items.map((item, i) => (
               <MovieCard className="mcard" category={props.category} item={item} key={i} />
             ))}

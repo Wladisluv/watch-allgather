@@ -4,7 +4,7 @@ export const category = {
     films: 'films',
     popularFilms: 'popularFilms',
     tv: 'tv',
-    topAnime: 'topAnime'
+    anime: 'anime'
 }
 
 export const movieType = {

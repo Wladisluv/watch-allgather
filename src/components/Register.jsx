@@ -8,7 +8,7 @@ import { setUser } from '../store/slices/userSlice';
 
 const Register = () => {
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleRegister = (email, password) => {
     const auth = getAuth();
@@ -22,7 +22,7 @@ const Register = () => {
             token: user.accessToken,
           }),
         );
-        history('/main');
+        navigate('/main');
       })
       .catch(console.error);
   };
