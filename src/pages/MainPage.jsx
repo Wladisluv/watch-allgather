@@ -27,7 +27,6 @@ const MainPage = (props) => {
         };
         response = await kinopoiskApi.search(props.category, { params });
         setItems(response.films);
-        console.log(response);
       }
     };
     getList();
@@ -51,23 +50,11 @@ const MainPage = (props) => {
           </div>
         }
       />
-      <Filters countries="Все страны" genres="Все жанры" year="Все годы" />
+      {/* <Filters countries="Все страны" genres="Все жанры" year="Все годы" /> */}
 
       {keyword <= 0 ? (
         <div className="films">
           <div className="container">
-            <div className="films__item">
-              <Link className="films__item__catalog-link" to="/catalog/films/top250">
-                <div className="films__item-header">
-                  <div className="films__item-header__title">
-                    <h2>Лучшие фильмы</h2>
-                  </div>
-                  <div className="films__item-header__arrow"></div>
-                </div>
-              </Link>
-              <MovieList category={category.films} type={'top?type=TOP_250_BEST_FILMS&'} />
-            </div>
-
             <div className="films__item">
               <Link className="films__item__catalog-link" to="/catalog/popularFilms">
                 <div className="films__item-header">
@@ -78,6 +65,18 @@ const MainPage = (props) => {
                 </div>
               </Link>
               <MovieList category={category.films} type={'top?type=TOP_100_POPULAR_FILMS&'} />
+            </div>
+
+            <div className="films__item">
+              <Link className="films__item__catalog-link" to="/catalog/films/top250">
+                <div className="films__item-header">
+                  <div className="films__item-header__title">
+                    <h2>Лучшие фильмы</h2>
+                  </div>
+                  <div className="films__item-header__arrow"></div>
+                </div>
+              </Link>
+              <MovieList category={category.films} type={'top?type=TOP_250_BEST_FILMS&'} />
             </div>
 
             <div className="films__item">

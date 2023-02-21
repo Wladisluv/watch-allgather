@@ -5,7 +5,7 @@ const Header = ({ signIn, userIcon, search, right }) => {
   return (
     <div className="header">
       <div className="container">
-        <Link to="/main">
+        <Link to="/">
           <div className="header__logo">
             <h1>Watch Allgather</h1>
           </div>

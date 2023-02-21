@@ -22,7 +22,7 @@ const Login = () => {
           }),
         );
         localStorage.setItem('email', email);
-        navigate('/main');
+        navigate('/');
       })
       .catch(() => alert('Неверный логин или пароль'));
   };

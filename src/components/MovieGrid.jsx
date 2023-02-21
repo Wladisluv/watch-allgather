@@ -59,7 +59,6 @@ const MovieGrid = (props) => {
               { params },
               (pageNumber = 1),
             );
-            console.log(response);
             break;
 
           case category.anime:
@@ -81,11 +80,9 @@ const MovieGrid = (props) => {
           keyword: keyword,
         };
         response = await kinopoiskApi.search(props.category, { params });
-        console.log(response);
       }
       setItems(response.items || response.films);
       setTotalPage(response.pagesCount || response.totalPages);
-      console.log(response.totalPages, response.pagesCount);
     };
     getList();
   }, [props.category, keyword]);
@@ -132,7 +129,6 @@ const MovieGrid = (props) => {
             page + 1,
           );
           setItems([...items, ...response.items]);
-          console.log(response);
           break;
         default:
           response = await kinopoiskApi.getMoviesList(
@@ -141,7 +137,6 @@ const MovieGrid = (props) => {
             page + 1,
           );
           setItems([...items, ...response.films]);
-          console.log(response);
       }
     } else {
       const params = {
@@ -151,14 +146,13 @@ const MovieGrid = (props) => {
       response = await kinopoiskApi.search(props.category, { params });
     }
     setPage(page + 1);
-    console.log(page + 1);
   };
 
   return (
     <>
       <div className="movie-grid">
         <p className="movie-grid__link">
-          <Link to="/main">Главная</Link> ➜ {listTitle}
+          <Link to="/">Главная</Link> ➜ {listTitle}
         </p>
         <h2 className="movie-grid__list-title">{listTitle}</h2>
         <div className="movie-grid__list">

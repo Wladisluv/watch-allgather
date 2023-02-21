@@ -28,7 +28,7 @@
 
       p {
         color: #888;
-
+        user-select: none;
         &:hover {
           color: #ededed;
         }

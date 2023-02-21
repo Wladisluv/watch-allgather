@@ -20,7 +20,6 @@ const Search = (props) => {
         };
         response = await kinopoiskApi.search(props.category, { params });
         setItems(response.films);
-        console.log(response);
       }
     };
     getList();

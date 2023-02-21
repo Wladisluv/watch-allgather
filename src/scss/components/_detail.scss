@@ -62,6 +62,7 @@
 
 .detail-add-to-fav {
   display: grid;
+  margin-left: 50px;
   grid-auto-flow: column;
   gap: 50px;
   align-content: center;
@@ -84,6 +85,14 @@
         cursor: pointer;
         transition: 0.2s;
         background-color: $components-color;
+      }
+    }
+
+    .detail-add-to-fav__item__delete-btn {
+      &:hover {
+        cursor: pointer;
+        transition: 0.2s;
+        background-color: rgb(174, 8, 8);
       }
     }
   }

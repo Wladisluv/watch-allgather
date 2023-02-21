@@ -16,17 +16,26 @@ const User = () => {
   localStorage.setItem('email', email);
   localStorage.setItem('token', token);
   localStorage.setItem('id', id);
-  // useEffect(() => {
-  //   if (isAuth) {
-  //     navigate('/main');
-  //   } else {
-  //     navigate('/login');
-  //   }
-  // }, [isAuth, navigate]);
+
+  useEffect(() => {
+    if (email === null) {
+      localStorage.removeItem('email');
+      localStorage.removeItem('token');
+      localStorage.removeItem('id');
+      navigate('/login');
+    }
+  }, [isAuth, navigate, email]);
+
+  const goToMain = (email) => {
+    if (email !== null) {
+      navigate('/');
+    }
+  };
 
   const handleOpen = () => {
     setOpen(!isOpen);
   };
+
   return (
     <div>
       <div className="user" onClick={handleOpen}>

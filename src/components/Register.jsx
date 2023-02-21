@@ -14,7 +14,6 @@ const Register = () => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -22,7 +21,7 @@ const Register = () => {
             token: user.accessToken,
           }),
         );
-        navigate('/main');
+        navigate('/');
       })
       .catch(console.error);
   };
