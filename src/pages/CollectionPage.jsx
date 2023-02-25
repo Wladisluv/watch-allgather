@@ -113,7 +113,7 @@ const Collection = () => {
           </div>
         </div>
       </div>
-      {(isWatchingOpen || isWatchedOpen || isWillWatchOpen) && items >= 0 ? (
+      {(isWatchingOpen || isWatchedOpen || isWillWatchOpen) && items <= 0 ? (
         <div className="qweqwe"></div>
       ) : (
         <div className="container">
