@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/watch-allgather/static/css/main.d0d30434.css",
+    "main.css": "/watch-allgather/static/css/main.2ffcd6df.css",
     "main.js": "/watch-allgather/static/js/main.ad279cde.js",
     "static/media/the-simpsons-homer-simpson.gif": "/watch-allgather/static/media/the-simpsons-homer-simpson.da7962d2c29f0f484297.gif",
     "static/media/Anime-PNG-Download-Image.png": "/watch-allgather/static/media/Anime-PNG-Download-Image.fa7e81575f7587b97e1e.png",
@@ -8,11 +8,11 @@
     "static/media/search.png": "/watch-allgather/static/media/search.926bf649046465473807.png",
     "static/media/arrow.png": "/watch-allgather/static/media/arrow.9edfd30de83ab8492410.png",
     "index.html": "/watch-allgather/index.html",
-    "main.d0d30434.css.map": "/watch-allgather/static/css/main.d0d30434.css.map",
+    "main.2ffcd6df.css.map": "/watch-allgather/static/css/main.2ffcd6df.css.map",
     "main.ad279cde.js.map": "/watch-allgather/static/js/main.ad279cde.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0d30434.css",
+    "static/css/main.2ffcd6df.css",
     "static/js/main.ad279cde.js"
   ]
 }
