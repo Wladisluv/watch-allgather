@@ -7,7 +7,7 @@ const LoginPage = () => {
   return (
     <div className="auth">
       <h1 className="auth__title">Watch Allgather</h1>
-      <Link to="/">
+      <Link to="/welcome">
         <span className="auth__close">&times;</span>
       </Link>
       <Login />

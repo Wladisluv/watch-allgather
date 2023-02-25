@@ -42,9 +42,10 @@
     line-height: 20px;
     padding: 0;
     position: absolute;
-    right: 80px;
+    right: 0px;
     text-align: left;
     top: 85px;
+    transition: opacity 100ms;
 
     &__triangle {
     background-color: #202020;
@@ -122,4 +123,10 @@
           }
         }
       }
+    }
+
+    @media only screen and (min-width: 1450px) {
+      // .select {
+      //   right: 311px;
+      // }
     }

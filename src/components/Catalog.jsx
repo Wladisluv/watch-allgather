@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 
 import MovieGrid from '../components/MovieGrid';
 import Header from './Header';
-import Search from './Search';
 import User from './User';
 import MovieCard from './MovieCard';
 

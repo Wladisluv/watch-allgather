@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import Form from './Form';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
@@ -24,7 +25,17 @@ const Login = () => {
         localStorage.setItem('email', email);
         navigate('/');
       })
-      .catch(() => alert('Неверный логин или пароль'));
+      .catch(() =>
+        Swal.fire({
+          position: 'top',
+          icon: 'error',
+          title: 'Введен неверный логин или пароль',
+          showConfirmButton: false,
+          background: '#262C2C',
+          width: '30em',
+          timer: 1000,
+        }),
+      );
   };
 
   return (

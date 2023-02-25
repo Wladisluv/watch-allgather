@@ -14,6 +14,7 @@
 
 .swiper-container {
   overflow: visible;
+  position: relative;
 }
 
 .swiper {
@@ -22,6 +23,7 @@
 
 .swiper-button-prev {
   position: absolute;
+  z-index: 999;
   background-color: rgba(80,80,80,.8);
   height: 54px;
   border-radius: 50%;
@@ -30,12 +32,16 @@
   width: 54px;
   z-index: 1;
   left: 0px;
-  top: 45%;
+  top: 50%;
 
   &:after {
     color: white;
     font-size: 30px;
     font-weight: 900;
+  }
+
+  &:hover {
+    background-color: rgba(142, 142, 142, 0.8);
   }
 }
 
@@ -49,12 +55,16 @@
   width: 54px;
   z-index: 1;
   right: 0px;
-  top: 45%;
+  top: 50%;
 
   &:after {
     color: white;
     font-size: 30px;
     font-weight: bold;
+  }
+
+  &:hover {
+    background-color: rgba(142, 142, 142, 0.8);
   }
 }
 
