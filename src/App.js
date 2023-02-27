@@ -9,8 +9,6 @@ import MainPage from "./pages/MainPage";
 
 import Catalog from './components/Catalog';
 import Detail from './pages/Detail';
-
-import './scss/app.scss'
 import Collection from "./pages/CollectionPage";
 
 

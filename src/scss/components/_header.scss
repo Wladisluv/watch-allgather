@@ -8,11 +8,11 @@
   background-color: $header-footer-bgc;
 
   .container {
-    margin: 0 auto;
     display: flex;
+    margin: 0 auto;
+    max-width: 1280px;
     align-items: center;
     justify-content: space-between;
-    max-width: 1280px;
   }
 
   &__logo {

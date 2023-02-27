@@ -50,7 +50,6 @@ const MainPage = (props) => {
           </div>
         }
       />
-      {/* <Filters countries="Все страны" genres="Все жанры" year="Все годы" /> */}
 
       {keyword <= 0 ? (
         <div className="films">

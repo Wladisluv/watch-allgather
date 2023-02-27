@@ -3,6 +3,10 @@ import { useParams } from 'react-router';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
+import Header from '../components/Header';
+import Search from '../components/Search';
+import User from '../components/User';
+
 import kinopoiskApi from '../api/kinopoiskApi';
 import apiConfig from '../api/apiConfig';
 
@@ -39,7 +43,7 @@ const Detail = () => {
 
   const deleteMovieAsWatching = () => {
     let awd = item.kinopoiskId;
-    const index = willWatchMovies.filter((item) => item.kinopoiskId !== awd);
+    const index = watchingMovies.filter((item) => item.kinopoiskId !== awd);
     localStorage.setItem('watching-movies', JSON.stringify(index));
 
     Swal.fire({
@@ -77,7 +81,7 @@ const Detail = () => {
 
   const deleteMovieAsWatched = () => {
     let awd = item.kinopoiskId;
-    const index = willWatchMovies.filter((item) => item.kinopoiskId !== awd);
+    const index = watchedMovies.filter((item) => item.kinopoiskId !== awd);
     localStorage.setItem('watched-movies', JSON.stringify(index));
 
     Swal.fire({
@@ -140,7 +144,16 @@ const Detail = () => {
     <>
       {item && (
         <div className="detail">
+          <Header
+        right={
+          <div className="header__right">
+            <Search />
+            <User />
+          </div>
+        }
+      />
           <div className="container">
+          <div className='detail-margin'>
             <p className="movie-grid__link">
               <Link to="/">Главная</Link> ➜ {item.nameRu}
             </p>
@@ -329,6 +342,7 @@ const Detail = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       )}
     </>
