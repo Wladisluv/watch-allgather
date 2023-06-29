@@ -114,13 +114,17 @@ const Collection = () => {
         </div>
       </div>
       {(isWatchingOpen || isWatchedOpen || isWillWatchOpen) && items <= 0 ? (
-        <div className="qweqwe"></div>
+        <div className="movies_nothing"></div>
       ) : (
         <div className="container">
           <div className="movie-grid__list">
-            {items.map((item, i) => (
+            {items != 0 ?
+            items.map((item, i) => (
               <MovieCard className="mcard" item={item} key={i} />
-            ))}
+            ))
+            :
+            null
+            }
           </div>
         </div>
       )}

@@ -9,6 +9,10 @@ body {
   background-color: $bgc;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .wrapper {
   position: relative;
   min-height: 100%;
@@ -74,17 +78,10 @@ body {
       height: 600px;
     }
   }
+}
 
-  @media only screen and (min-width: 1450px) {
-    .content__img {
-      margin-top: 90px;
-      width: 500px;
-      height: 700px;
-    }
-
-    .content__round {
-      top: 30%;
-      right: 18%;
-    }
+@media (min-width: 1200px) {
+  .content {
+    padding: 50px;
   }
 }

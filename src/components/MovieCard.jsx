@@ -28,7 +28,7 @@ const MovieCard = (props) => {
       <div className="movie-card" style={{ backgroundImage: `url(${bg})` }}>
         <i className="bx bx-play"></i>
       </div>
-      <h3>{cut() || item.nameOriginal}</h3>
+      <h3 className='movie-card__title'>{cut() || item.nameOriginal}</h3>
     </Link>
   );
 };

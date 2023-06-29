@@ -6,7 +6,6 @@ import kinopoiskApi from '../api/kinopoiskApi';
 import Header from '../components/Header';
 import User from '../components/User';
 import Search from '../components/Search';
-import Filters from '../components/Filters';
 import MovieList from '../components/MovieList';
 import MovieGrid from '../components/MovieGrid';
 import MovieCard from '../components/MovieCard';

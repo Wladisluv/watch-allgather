@@ -76,3 +76,45 @@
   margin: 0 auto;
   max-width: 1280px;
 }
+
+@media (max-width: 1300px) {
+  .container {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 0 20px;
+  }
+
+  .movie-list {
+    .swiper-slide {
+      width: 20%;
+  }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0 20px;
+  }
+
+  .movie-list {
+    .swiper-slide {
+      width: 30%;
+  }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 0 10px;
+  }
+
+  .movie-list {
+    .swiper-slide {
+      width: 30%;
+  }
+  }
+}
