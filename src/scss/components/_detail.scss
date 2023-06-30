@@ -1,6 +1,10 @@
 @import '../variables';
 @import '@sweetalert2/theme-dark/dark.scss';
 
+body {
+  max-height: fit-content;
+}
+
 .detail {
   &-margin {
     padding-top: 15px;
@@ -23,7 +27,6 @@
 }
 
 .detail__top__film-about {
-  max-height: 480px;
   overflow-y: scroll;
   margin-left: 50px;
   &::-webkit-scrollbar {
@@ -40,7 +43,7 @@
 
   .detail__top__film-descr {
     margin-top: 30px;
-    width: 800px;
+    max-width: 50rem;
     &__descr {
       font-size: 22px;
       line-height: 30px;
@@ -127,4 +130,107 @@
             }
         }
     }
+}
+
+@media (max-width: 1000px) {
+  .detail {
+    &__top {
+      height: 400px;
+      &__film-poster {
+        &__img {
+          padding-top: 150%;
+        }
+      }
+    }
+  }
+
+  .detail-add-to-fav {
+    align-content: start;
+    margin-top: 200px;
+    margin-left: -13rem;
+  }
+
+  .detail__top__film-about {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail {
+    &__top {
+      &__film-poster {
+        &__img {
+          padding-top: 200%;
+        }
+      }
+    }
+  }
+
+  .detail__top__film-about {
+    height: fit-content;
+  }
+
+  .detail__film-about {
+    width: 150px;
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .detail__film-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-add-to-fav {
+    grid-auto-flow: row;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    &__item {
+      margin-left: 200px;
+      button {
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .detail {
+    &__top {
+      height: 200px;
+      &__film-poster {
+        &__img {
+          padding-top: 200%;
+        }
+      }
+    }
+  }
+
+  .detail__top__film-about {
+    height: 500px;
+  }
+
+  .detail__film-about {
+    width: 100px;
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .detail__film-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-add-to-fav {
+    grid-auto-flow: row;
+    margin-top: 50px;
+    &__item {
+      margin-left: 210px;
+      button {
+        width: 150px;
+        font-size: 18px;
+      }
+    }
+  }
 }

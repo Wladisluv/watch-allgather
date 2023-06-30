@@ -43,7 +43,7 @@ const MovieList = (props) => {
           <Swiper
             grabCursor={true}
             spaceBetween={15}
-            slidesPerGroup={6}
+            slidesPerGroup={1}
             slidesPerView={'auto'}
             navigation={true}
             modules={[Navigation]}>
